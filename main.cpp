@@ -48,7 +48,7 @@ void PrintTime(const TTime& T, const char* label) {
             << setfill('0') << setw(2) << T.seconds;
     }
     else {
-        cout << "Неправильное ";
+        cout << "Incorrect ";
     }
     cout << endl;
 }
@@ -56,35 +56,35 @@ void PrintTime(const TTime& T, const char* label) {
 // Завдання 1: Param74
 void Param74()
 {
-    cout << "\n--- Задание 1: Param74 ---" << endl;
+    cout << "\n--- Task 1: Param74 ---" << endl;
 
     const int NUM_TIMES = 5;
     TTime times[NUM_TIMES];
 
-    cout << "Введите " << NUM_TIMES << " моментов времени в формате: час мин сек:" << endl;
+    cout << "Enter " << NUM_TIMES << " times in the format: hour min sec:" << endl;
 
     // Зчитування введених користувачем моментів часу
     for (int i = 0; i < NUM_TIMES; i++)
     {
-        cout << "Время " << (i + 1) << " (час мин сек): ";
+        cout << "Time " << (i + 1) << " (h min sec): ";
         cin >> times[i].hours >> times[i].minutes >> times[i].seconds;
     }
 
-    cout << "\nРезультаты выполнения процедури PrevMin:" << endl;
+    cout << "\nResults of the PrevMin procedure:" << endl;
 
     // Застосування процедури PrevMin до кожного моменту часу
     for (int i = 0; i < NUM_TIMES; i++)
     {
-        cout << "Час " << (i + 1) << ":" << endl;
+        cout << "Time " << (i + 1) << ":" << endl;
 
         // Виведення початкового часу
-        PrintTime(times[i], "До");
+        PrintTime(times[i], "To");
 
         // Застосування процедури PrevMin
         PrevMin(times[i]);
 
         // Виведення зміненого часу
-        PrintTime(times[i], "После");
+        PrintTime(times[i], "After");
 
         cout << endl;
     }
@@ -93,11 +93,12 @@ void Param74()
 // Завдання 2: Begin28
 void Begin28()
 {
-    cout << "\n--- Задание 3: Begin28 ---" << endl;
+    cout << "\n--- Task 2: Begin28 ---" << endl;
 
     double A;
-    cout << "Введите число A: ";
+    cout << "Enter the number A: ";
     cin >> A;
+    cout << fixed << setprecision(0);
 
     // Початкове значення
     cout << "A^1 = " << A << endl;
@@ -126,40 +127,39 @@ void Begin28()
 // Завдання 3: Boolean2
 void Boolean2()
 {
-    cout << "\n--- Завдання 2: Boolean2 ---" << endl;
+    cout << "\n--- Task 3: Boolean2 ---" << endl;
 
     int A;
-    cout << "Введите целое число A: ";
+    cout << "Enter the number A: ";
     cin >> A;
 
     // Перевірка, чи є число непарним
     bool isOdd = (A % 2 != 0);
 
-    cout << "Выражение «Число A нечетное» - ";
+    cout << "The expression <<The number A is odd>> - ";
     if (isOdd)
     {
-        cout << "истина" << endl;
+        cout << "true" << endl;
     }
     else
     {
-        cout << "ложь" << endl;
+        cout << "fals" << endl;
     }
 }
 
 // Головна функція
 int main()
 {
-    setlocale(LC_ALL, "rus");
     int choice;
 
     do
     {
-        cout << "\nВыберите задание:\n"
+        cout << "\nSelect task:\n"
             << "1. Param74\n"
             << "2. Begin28\n"
             << "3. Boolean2\n"
-            << "0. Выход\n"
-            << "Ваш выбор: ";
+            << "0. Exit\n"
+            << "Your choice: ";
         cin >> choice;
 
         switch (choice)
@@ -174,10 +174,10 @@ int main()
             Boolean2();
             break;
         case 0:
-            cout << "Выход из программы.\n";
+            cout << "Exiting the program.\n";
             break;
         default:
-            cout << "Неверный выбор! Попробуйте еще раз.\n";
+            cout << "Wrong choice! Try again.\n";
         }
     } while (choice != 0);
 
